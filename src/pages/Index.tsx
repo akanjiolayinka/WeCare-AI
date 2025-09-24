@@ -176,7 +176,7 @@ const Index = () => {
               </div>
               <Button 
                 size="lg" 
-                variant="medical" 
+                variant="professional" 
                 className="shadow-medical hover-lift"
                 onClick={() => navigate('/scan')}
               >

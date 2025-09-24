@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "@/components/Header";
+import Navigation from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -66,7 +66,7 @@ const HistoryPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Navigation />
       
       <main className="container max-w-6xl mx-auto p-6">
         <div className="space-y-8">
@@ -149,7 +149,7 @@ const HistoryPage = () => {
                         Start your first skin analysis to see your history here.
                       </p>
                     </div>
-                    <Button variant="medical">
+                    <Button variant="professional">
                       Start First Scan
                     </Button>
                   </div>

@@ -190,7 +190,7 @@ const ScanInterface = () => {
 
           {/* Analyze Button */}
           <Button 
-            variant="medical" 
+            variant="professional" 
             size="lg" 
             className="w-full shadow-medical"
             onClick={handleAnalyze}

@@ -55,11 +55,11 @@ const Header = ({ onMenuToggle, isMenuOpen = false }: HeaderProps) => {
           <Button variant="ghost" size="icon" className="hidden sm:flex">
             <Settings className="h-4 w-4" />
           </Button>
-          <Button variant="medical" size="sm" className="hidden sm:flex">
+          <Button variant="professional" size="sm" className="hidden sm:flex">
             <User className="h-4 w-4 mr-2" />
             Sign In
           </Button>
-          <Button variant="medical" size="icon" className="sm:hidden">
+          <Button variant="professional" size="icon" className="sm:hidden">
             <User className="h-4 w-4" />
           </Button>
         </div>

@@ -35,11 +35,11 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="medical" className="shadow-medical hover-lift">
-                <Camera className="mr-2 h-5 w-5" />
-                Start Skin Scan
-              </Button>
-              <Button size="lg" variant="outline" className="hover-lift">
+            <Button size="lg" variant="professional" className="shadow-professional hover-lift">
+              <Camera className="mr-2 h-5 w-5" />
+              Start Skin Scan
+            </Button>
+            <Button size="lg" variant="outline" className="hover-lift">
                 Learn More
               </Button>
             </div>
