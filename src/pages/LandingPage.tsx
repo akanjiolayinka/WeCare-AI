@@ -76,7 +76,7 @@ const LandingPage = () => {
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="hover-lift" onClick={() => navigate('/demo')}>
+              <Button size="lg" variant="outline" className="hover-lift" onClick={() => navigate('/scan')}>
                 Try Demo Scan
               </Button>
             </div>
