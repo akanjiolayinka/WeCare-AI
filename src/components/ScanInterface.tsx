@@ -2,9 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-
-import { Label } from "@/components/ui/label";
 import { 
   Camera, 
   Upload, 
@@ -12,14 +9,12 @@ import {
   AlertTriangle, 
   CheckCircle, 
   Clock,
-  Globe,
   Shield
 } from "lucide-react";
 
 const ScanInterface = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [language, setLanguage] = useState("en");
   const [result, setResult] = useState<any>(null);
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -133,31 +128,6 @@ const ScanInterface = () => {
                 <Camera className="mr-2 h-4 w-4" />
                 Take Photo
               </Button>
-            </div>
-          </div>
-
-          {/* Settings */}
-          <div className="space-y-4 border-t pt-6">
-            <h3 className="font-semibold flex items-center">
-              <Globe className="mr-2 h-4 w-4 text-secondary" />
-              Settings
-            </h3>
-            
-            <div className="space-y-4">
-              <div className="space-y-2">
-                <Label>Language</Label>
-                <Select value={language} onValueChange={setLanguage}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="en">English</SelectItem>
-                    <SelectItem value="yo">Yoruba</SelectItem>
-                    <SelectItem value="ha">Hausa</SelectItem>
-                    <SelectItem value="ig">Igbo</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
             </div>
           </div>
 
