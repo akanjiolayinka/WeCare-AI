@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Switch } from "@/components/ui/switch";
+
 import { Label } from "@/components/ui/label";
 import { 
   Camera, 
@@ -13,7 +13,6 @@ import {
   CheckCircle, 
   Clock,
   Globe,
-  Brain,
   Shield
 } from "lucide-react";
 
@@ -21,7 +20,6 @@ const ScanInterface = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [language, setLanguage] = useState("en");
-  const [simpleMode, setSimpleMode] = useState(false);
   const [result, setResult] = useState<any>(null);
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,12 +44,8 @@ const ScanInterface = () => {
         condition: "Acne Vulgaris",
         confidence: 92,
         urgency: "monitor",
-        description: simpleMode 
-          ? "You have common acne. It's normal for teenagers and young adults. Keep your face clean and avoid touching it."
-          : "Moderate acne vulgaris with comedones and inflammatory papules. Commonly affects adolescents and young adults.",
-        nextSteps: simpleMode
-          ? "Wash your face twice daily with gentle soap. If it gets worse, see a doctor."
-          : "Continue gentle skincare routine. Consider topical retinoids. Consult dermatologist if condition persists.",
+        description: "Moderate acne vulgaris with comedones and inflammatory papules. Commonly affects adolescents and young adults.",
+        nextSteps: "Continue gentle skincare routine. Consider topical retinoids. Consult dermatologist if condition persists.",
         riskLevel: "low"
       });
       setIsAnalyzing(false);
@@ -78,15 +72,6 @@ const ScanInterface = () => {
 
   return (
     <div className="container max-w-4xl mx-auto p-6 space-y-8">
-      {/* Header */}
-      <div className="text-center space-y-4">
-        <h1 className="text-3xl font-bold">AI Skin Analysis</h1>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          Upload or take a photo of your skin condition for instant AI-powered analysis. 
-          Get results in your preferred language with voice playback.
-        </p>
-      </div>
-
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Upload Section */}
         <Card className="p-6 space-y-6 shadow-card">
@@ -173,18 +158,6 @@ const ScanInterface = () => {
                   </SelectContent>
                 </Select>
               </div>
-
-              <div className="flex items-center space-x-2">
-                <Switch
-                  id="simple-mode"
-                  checked={simpleMode}
-                  onCheckedChange={setSimpleMode}
-                />
-                <Label htmlFor="simple-mode" className="flex items-center">
-                  <Brain className="mr-2 h-4 w-4" />
-                  Explain Like I'm 5
-                </Label>
-              </div>
             </div>
           </div>
 
@@ -203,7 +176,7 @@ const ScanInterface = () => {
               </>
             ) : (
               <>
-                <Brain className="mr-2 h-4 w-4" />
+                <Shield className="mr-2 h-4 w-4" />
                 Analyze Skin Condition
               </>
             )}
@@ -220,7 +193,7 @@ const ScanInterface = () => {
           {!result && !isAnalyzing && (
             <div className="text-center py-12 space-y-4">
               <div className="mx-auto w-16 h-16 bg-muted rounded-full flex items-center justify-center">
-                <Brain className="h-8 w-8 text-muted-foreground" />
+                <Shield className="h-8 w-8 text-muted-foreground" />
               </div>
               <p className="text-muted-foreground">
                 Upload an image to get started with AI analysis
