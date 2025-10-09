@@ -12,8 +12,7 @@ import {
   Brain,
   Star,
   ArrowRight,
-  CheckCircle,
-  Star
+  CheckCircle
 } from "lucide-react";
 
 const Index = () => {
