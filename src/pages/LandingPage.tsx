@@ -28,6 +28,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -180,7 +181,9 @@ const LandingPage = () => {
               <button onClick={() => setIsAboutOpen(true)} className="hover:text-primary transition-colors">
                 About
               </button>
-              <span>Privacy Policy</span>
+              <button onClick={() => setIsPrivacyOpen(true)} className="hover:text-primary transition-colors">
+                Privacy Policy
+              </button>
               <span>Contact</span>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -272,6 +275,129 @@ const LandingPage = () => {
               <p className="text-sm text-muted-foreground">
                 WeCare AI is not a diagnostic tool and does not replace professional medical advice, diagnosis, or treatment. It serves as an assistive platform to provide preliminary guidance and promote skin health awareness. For medical concerns, always consult a qualified healthcare professional.
               </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Privacy Policy Dialog */}
+      <Dialog open={isPrivacyOpen} onOpenChange={setIsPrivacyOpen}>
+        <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl flex items-center gap-2">
+              <Shield className="h-6 w-6 text-primary" />
+              Privacy Policy — WeCare AI
+            </DialogTitle>
+          </DialogHeader>
+          
+          <div className="space-y-6 mt-4">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">1. Introduction</h3>
+              <p className="text-sm text-muted-foreground">
+                At WeCare AI ("we," "our," "us"), your privacy is a top priority. This Privacy Policy explains how we collect, use, and protect your personal information when you use our services.
+              </p>
+              <p className="text-sm text-muted-foreground mt-2">
+                By accessing or using WeCare AI, you agree to the terms outlined in this Privacy Policy.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">2. Information We Collect</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                We collect only the data necessary to provide a secure and efficient experience:
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground ml-4">
+                <li><strong>Personal Information:</strong> Such as name, email address, and account credentials.</li>
+                <li><strong>Uploaded Images:</strong> Photos submitted for AI skin analysis. These are processed securely and deleted automatically after analysis unless you choose to save them.</li>
+                <li><strong>Usage Data:</strong> Information about app interactions, features accessed, and scan history.</li>
+                <li><strong>Device and Location Data:</strong> Device type, browser version, and approximate location (used only for geolocation features like clinic suggestions).</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">3. How We Use Your Information</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Your data is used strictly to:
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground ml-4">
+                <li>Deliver and improve core app functionalities.</li>
+                <li>Provide personalized health insights and recommendations.</li>
+                <li>Maintain your scan history for your reference.</li>
+                <li>Enhance user experience and security.</li>
+                <li>Communicate updates, technical notices, or support responses.</li>
+              </ul>
+              <p className="text-sm text-muted-foreground mt-3 font-medium">
+                WeCare AI does not sell, rent, or trade user information to third parties.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">4. Data Security</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                WeCare AI employs advanced encryption and secure data handling practices to protect user information.
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground ml-4">
+                <li>All communications are transmitted over HTTPS.</li>
+                <li>Uploaded images are stored temporarily and erased after processing.</li>
+                <li>Saved user data is encrypted and accessible only by the account owner.</li>
+                <li>We consistently monitor and update our systems to prevent unauthorized access or misuse.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">5. User Control and Rights</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                As a user, you maintain full control over your personal information. You may:
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground ml-4">
+                <li>View, edit, or delete your account data at any time.</li>
+                <li>Remove stored scan history.</li>
+                <li>Request complete account deletion.</li>
+                <li>Manage notification or email preferences.</li>
+              </ul>
+              <p className="text-sm text-muted-foreground mt-3">
+                To exercise these rights, contact us at <a href="mailto:support@wecareai.health" className="text-primary hover:underline">support@wecareai.health</a>
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">6. Third-Party Services</h3>
+              <p className="text-sm text-muted-foreground mb-2">
+                WeCare AI integrates certain third-party services (such as maps and AI models) to improve user experience. These services comply with global data privacy standards, including GDPR and CCPA.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                We ensure all third-party integrations adhere to strict security and ethical data handling standards.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">7. Children's Privacy</h3>
+              <p className="text-sm text-muted-foreground mb-2">
+                WeCare AI is intended for users aged 16 years and above.
+                We do not knowingly collect or store personal data from minors. If a child has submitted personal information, please contact us immediately to remove it.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">8. Policy Updates</h3>
+              <p className="text-sm text-muted-foreground mb-2">
+                We may occasionally update this Privacy Policy to reflect improvements or legal requirements. Any significant updates will be communicated through the platform or email notification.
+              </p>
+              <p className="text-sm text-muted-foreground font-medium">
+                Last Updated: October 2025
+              </p>
+            </div>
+
+            <div className="bg-muted/50 p-4 rounded-lg border">
+              <h3 className="text-lg font-semibold mb-2">9. Contact Us</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                For questions, privacy concerns, or feedback, please contact us:
+              </p>
+              <div className="space-y-1 text-sm text-muted-foreground">
+                <p>📧 <a href="mailto:support@wecareai.health" className="text-primary hover:underline">support@wecareai.health</a></p>
+                <p>🌐 www.wecareai.health</p>
+                <p>📍 Lagos, Nigeria</p>
+              </div>
             </div>
           </div>
         </DialogContent>
