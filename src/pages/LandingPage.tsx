@@ -7,12 +7,21 @@ import {
   ArrowRight,
   Shield,
   Globe,
-  CheckCircle
+  CheckCircle,
+  Moon,
+  Sun
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle('dark');
+  };
 
   const features = [
     {
@@ -50,6 +59,9 @@ const LandingPage = () => {
             <span className="font-bold text-xl">WeCare AI</span>
           </div>
           <div className="flex items-center space-x-4">
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
+              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
             <Button variant="ghost" onClick={() => navigate('/login')}>
               Sign In
             </Button>
