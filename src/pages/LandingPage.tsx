@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { 
   Brain, 
   MessageSquare, 
@@ -9,7 +16,10 @@ import {
   Globe,
   CheckCircle,
   Moon,
-  Sun
+  Sun,
+  Heart,
+  Sparkles,
+  AlertTriangle
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -17,6 +27,7 @@ import { useState } from "react";
 const LandingPage = () => {
   const navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -166,7 +177,9 @@ const LandingPage = () => {
         <div className="container px-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
-              <span>About</span>
+              <button onClick={() => setIsAboutOpen(true)} className="hover:text-primary transition-colors">
+                About
+              </button>
               <span>Privacy Policy</span>
               <span>Contact</span>
             </div>
@@ -176,6 +189,93 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
+
+      {/* About Dialog */}
+      <Dialog open={isAboutOpen} onOpenChange={setIsAboutOpen}>
+        <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl flex items-center gap-2">
+              <Heart className="h-6 w-6 text-primary" />
+              About WeCare AI
+            </DialogTitle>
+            <DialogDescription className="text-base mt-4">
+              WeCare AI is an intelligent health companion designed to make skin health management simple, personalized, and accessible for everyone.
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="space-y-6 mt-4">
+            <div>
+              <p className="text-muted-foreground">
+                Our mission is to empower individuals with smart tools that use Artificial Intelligence to detect, understand, and manage common skin concerns—helping users make informed decisions about their health before visiting a professional.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                <Globe className="h-5 w-5 text-primary" />
+                Our Vision
+              </h3>
+              <p className="text-muted-foreground">
+                To bridge the gap between technology and healthcare by offering AI-driven tools that promote early detection, preventive care, and better awareness of skin conditions globally.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-primary" />
+                Our Features
+              </h3>
+              <div className="space-y-3">
+                <div className="flex gap-3">
+                  <Brain className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium">AI Skin Analyzer</p>
+                    <p className="text-sm text-muted-foreground">Upload or capture a photo to receive instant insights about possible skin conditions.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <MessageSquare className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium">AI Health Chat</p>
+                    <p className="text-sm text-muted-foreground">Ask personalized questions and receive evidence-based guidance in real time.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Lightbulb className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium">Daily Skin Tips</p>
+                    <p className="text-sm text-muted-foreground">Get curated, research-backed advice to maintain healthy and glowing skin.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Globe className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium">Nearby Clinics</p>
+                    <p className="text-sm text-muted-foreground">Find nearby pharmacies, hospitals, and dermatology clinics through integrated geolocation services.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Globe className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium">Multi-Language Support</p>
+                    <p className="text-sm text-muted-foreground">Communicate effortlessly in your preferred language.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-muted/50 p-4 rounded-lg border">
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                <AlertTriangle className="h-5 w-5 text-warning" />
+                Disclaimer
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                WeCare AI is not a diagnostic tool and does not replace professional medical advice, diagnosis, or treatment. It serves as an assistive platform to provide preliminary guidance and promote skin health awareness. For medical concerns, always consult a qualified healthcare professional.
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
