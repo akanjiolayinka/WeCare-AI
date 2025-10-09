@@ -17,7 +17,7 @@ import {
   CheckCircle,
   Moon,
   Sun,
-  Heart,
+  Star,
   Sparkles,
   AlertTriangle
 } from "lucide-react";
@@ -198,7 +198,7 @@ const LandingPage = () => {
         <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl flex items-center gap-2">
-              <Heart className="h-6 w-6 text-primary" />
+              <Star className="h-6 w-6 text-primary" />
               About WeCare AI
             </DialogTitle>
             <DialogDescription className="text-base mt-4">

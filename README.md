@@ -1,58 +1,24 @@
-# Welcome to your Lovable project
+# WeCare AI
 
-## Project info
+WeCare AI is an AI assistant for skin health built with Vite, React and Tailwind.
 
-**URL**: https://lovable.dev/projects/6da2cd97-b20f-4bb8-8f96-33ae0b3bb63b
+## Getting started (local)
 
-## How can I edit this code?
+Prerequisites: Node.js and npm.
 
-There are several ways of editing your application.
+1. Clone the repository:
 
-**Use Lovable**
+	git clone <YOUR_GIT_URL>
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6da2cd97-b20f-4bb8-8f96-33ae0b3bb63b) and start prompting.
+2. Install dependencies:
 
-Changes made via Lovable will be committed automatically to this repo.
+	npm install
 
-**Use your preferred IDE**
+3. Start the dev server:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+	npm run dev
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+## Technologies
 
 - Vite
 - TypeScript
@@ -60,14 +26,12 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/6da2cd97-b20f-4bb8-8f96-33ae0b3bb63b) and click on Share -> Publish.
+Build with:
 
-## Can I connect a custom domain to my Lovable project?
+```
+npm run build
+```
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Serve the `dist` folder with any static host.

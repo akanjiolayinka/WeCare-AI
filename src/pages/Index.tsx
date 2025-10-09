@@ -10,7 +10,7 @@ import {
   Clock, 
   Users, 
   Brain,
-  Heart,
+  Star,
   ArrowRight,
   CheckCircle,
   Star
@@ -163,7 +163,7 @@ const Index = () => {
           <Card className="p-12 text-center shadow-medical gradient-card border-0 max-w-2xl mx-auto">
             <div className="space-y-6">
               <div className="flex justify-center">
-                <Heart className="h-16 w-16 text-primary" />
+                <Star className="h-16 w-16 text-primary" />
               </div>
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold">

@@ -9,7 +9,7 @@ import {
   Shield,
   RefreshCw,
   Clock,
-  Heart
+  Star
 } from "lucide-react";
 
 const TipsPage = () => {
@@ -59,7 +59,7 @@ const TipsPage = () => {
   ];
 
   const todaysTip = {
-    icon: Heart,
+    icon: Star,
     title: "Moisturize immediately after showering",
     description: "Apply moisturizer to damp skin within 3 minutes of showering to lock in hydration and prevent dryness.",
     category: "Hydration"
