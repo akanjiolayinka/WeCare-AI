@@ -26,7 +26,6 @@ import { useState } from "react";
 const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const navItems = [
     { path: '/dashboard', label: 'Dashboard', icon: Home },
@@ -36,19 +35,11 @@ const Navigation = () => {
     { path: '/clinics', label: 'Clinics', icon: MapPin },
   ];
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
-  };
-
   return (
     <nav className="border-b bg-card/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="container px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-white font-bold text-sm">W</span>
-          </div>
           <span className="font-bold text-xl">WeCare AI</span>
         </div>
 
@@ -110,11 +101,6 @@ const Navigation = () => {
             <DropdownMenuItem onClick={() => navigate('/settings')} className="flex items-center space-x-2">
               <Settings className="h-4 w-4" />
               <span>Settings</span>
-            </DropdownMenuItem>
-            
-            <DropdownMenuItem onClick={toggleTheme} className="flex items-center space-x-2">
-              {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-              <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
             </DropdownMenuItem>
             
             <DropdownMenuSeparator />
