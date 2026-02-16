@@ -1,4 +1,4 @@
-# WeCare AI
+## WeCare AI
 
 WeCare AI is an AI assistant for skin health built with Vite, React and Tailwind.
 
