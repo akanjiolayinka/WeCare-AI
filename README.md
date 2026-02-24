@@ -4,7 +4,7 @@ WeCare AI is an AI assistant for skin health built with Vite, React and Tailwind
 
 ## Getting started (local)
 
-Prerequisites: Node.js and npm.
+Prerequisites: Node.js and npm
 
 1. Clone the repository:
 
