@@ -12,7 +12,7 @@ Prerequisites: Node.js and npm.
 
 2. Install dependencies:
 
-	npm 
+	npm install.
 
 3. Start the dev server:
 
